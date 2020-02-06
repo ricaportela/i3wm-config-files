@@ -1,0 +1,8 @@
+#!/bin/bash
+amixer sget Master | grep ']' | cut -d"[" -f 2- | cut -d"]" -f 1 | head -n 1 | tr '\n' ''; echo -n " "
+amixer -c 1 | grep -i 'front left: playback' | grep -vE '^.*back \[on\]$' | tr ' ' '\n' | grep '%\]' | tr '\n' ' '
+echo "$a"
+echo "-"
+echo "#aaaaaa"
+#echo "#8c9440"
+

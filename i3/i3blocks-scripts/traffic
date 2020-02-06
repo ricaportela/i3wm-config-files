@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#dev="wlp3s0"
+#dev="eth0"
+dev="enp0s25"
+
+echo -n "$dev: "
+
+# a = RX, b = TX
+a="$(ifconfig "$dev" | grep 'RX packets' | xargs | cut -d" " -f 5 | numfmt --to=iec)"
+b="$(ifconfig "$dev" | grep 'TX packets' | xargs | cut -d" " -f 5 | numfmt --to=iec)"
+
+echo "[RX: $a, TX: $b]"
+echo "RX: $a, TX: $b"
+#echo "#81a2be"
+echo "#aaaaaa"
+
+
+
+
+
